@@ -1,345 +1,236 @@
-<!DOCTYPE html>
-<header>
-        <nav>
-            <div class="logo">
-                <a href="index.html"><img src="img/logo.png" alt="Sport Template"></a>
+<!DOCTYPE html> {{#unless logged_in}} {{>registration}} {{/unless}} {{#if logged_in}} {{>nav}}
+<section class="m-12 bg-dark-blue">
+    <div class="m-06">
+        <div class="m-6 bg-03">
+            <div class="module-content content">
+                <a href="fantasy/runningbacks" method="GET"><h1>Compare Running Backs</h1></a>
+                <p>Who will rush for more yards this week? </p>
+                <div class="info">
+                    <ul>
+                        
+                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Pages</a>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="soon.html">Comming soon</a></li>
-                    </ul>
-                </li>
-                    <ul>
-                        <li><a href="blog-post.html">Blog Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="nav-mobile">
-            <ul class="nav-mobile-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><div>Pages <i class="fa fa-chevron-right"></i></div>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="soon.html">Comming soon</a></li>
-                    </ul>
-                </li>
-                <li><div>Blog <i class="fa fa-chevron-right"></i></div>
-                    <ul>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-post.html">Blog Post</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <ul class="button-menu">
-                <li>
-                    <i class="fa fa-bars"></i>
-                </li>
-            </ul>
         </div>
-    </header>
-
-    <section class="m-12 bg-dark-blue">
-        <div class="m-06">
-
-            <div class="m-6 bg-03">
-                <div class="module-content content">
-                    <a href="fantasy/runningbacks" method="GET"><h1>Compare Running Backs</h1></a>
-                    <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                    <div class="info">
-                        <ul>
-                            <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                            <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                        </ul>
-                    </div>
+        <div class="m-6 bg-03">
+            <div class="module-content content">
+                <a href="fantasy/tightends" method="GET"><h1>Compare Tight Ends</h1></a>
+                <p>Gronkowskis Back! Who else could you choose? </p>
+                <div class="info">
+                    <ul>
+                        
+                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="m-6 bg-02">
-                <div class="module-content content">
-                    <a href="fantasy/tightends" method="GET"><h1>Compare Tight Ends</h1></a>
-                    <p>Gronkowskis Back!</p>
-                    <div class="info">
-                        <ul>
-                            <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                            <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                        </ul>
-                    </div>
+        </div>
+    </div>
+    <div class="m-06">
+        <div class="m-6 bg-03">
+            <div class="module-content content">
+                <a href="fantasy/quarterbacks" method="GET"><h1>Compare Quarterbacks</h1></a>
+                <p>Which Quarterback will you choose this week? </p>
+                <div class="info">
+                    <ul>
+                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="m-06 bg-03">
-                <div class="module-content content">
-                    <a href="fantasy/quarterbacks" method="GET"><h1>Compare Quarterbacks</h1></a>
-                    <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                    <div class="info">
-                        <ul>
-                            <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                            <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                        </ul>
-                    </div>
+        </div>
+        <div class="m-6 bg-03">
+            <div class="module-content content">
+                <a href="fantasy/widereceivers" method="GET"><h1>Compare Wide Receivers</h1></a>
+                <p>Who will recieve the most touchdowns?</p>
+                <div class="info">
+                    <ul>
+                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
+                    </ul>
                 </div>
             </div>
-
-
-            <div class="m-06 bg-03">
-                <div class="module-content content">
-                    <a href="fantasy/widereceivers" method="GET"><h1>Compare Wide Receivers</h1></a>
-                    <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                    <div class="info">
-                        <ul>
-                            <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                            <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="m-06 bg-dark-blue">
-                <div class="owl-carousel owl-theme" data-items="1" data-auto-play="true">
-
-                    <div class="item">
-                        <div class="m-12 bg-06">
-                            <div class="module-content content">
-                                <a href="blog-post.html"><h1>Compare Quarterbacks</h1></a>
-                                <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                                <div class="info">
-                                    <ul>
-                                        <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="m-12 bg-03">
-                            <div class="module-content content">
-                                <a href="blog-post.html"><h1>Compare Quarterbacks</h1></a>
-                                <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                                <div class="info">
-                                    <ul>
-                                        <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="m-12 bg-02">
-                            <div class="module-content content">
-                                <a href="blog-post.html"><h1>Compare Quarterbacks</h1></a>
-                                <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                                <div class="info">
-                                    <ul>
-                                        <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="m-12 bg-04">
-                            <div class="module-content content">
-                                <a href="blog-post.html"><h1>Blues can silence critics - Carney </h1></a>
-                                <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
-                                <div class="info">
-                                    <ul>
-                                        <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
-                                        <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+        </div>
+    </div>
+    <div class="m-06 bg-dark-blue">
+        <div class="owl-carousel owl-theme" data-items="1" data-auto-play="true">
+            <div class="item">
+                <div class="m-12 bg-06">
+                    <div class="module-content content">
+                        <a href="blog-post.html"><h1>Compare Quarterbacks</h1></a>
+                        <p>Birmingham City's Karen Carney says they have proved critics wrong by reaching the Women's Champions League semi-finals. </p>
+                        <div class="info">
+                            <ul>
+                                <li class="date"><i class="fa fa-calendar"></i>31 Mar 2014</li>
+                                <li class="tag"><a href="#"><i class="fa fa-tag"></i>Football</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
+            
             <div class="m-06 bg-dark-blue">
                 <div class="module-content">
-
                     <div class="title-default">
-                        <h2>Title</h2>
+                        <h2>Current Pass Defense Rankings</h2>
                     </div>
                     <div class="tab-dark-blue">
                         <div class="m-12">
                             <ul class="horizontal tab-nav click-tab">
-                                <li class="m-04"><h4>Yesterday</h4></li>
-                                <li class="m-04"><h4>Today</h4></li>
-                                <li class="m-04"><h4>Tomorrow</h4></li>
+                                <li class="m-04">
+                                    <h4>Yesterday</h4></li>
+                                <li class="m-04">
+                                    <h4>Today</h4></li>
+                                <li class="m-04">
+                                    <h4>Tomorrow</h4></li>
                             </ul>
                         </div>
-                            <div class="tab-content">
-                                <div>
-                                    <table class="table-scores">
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Man City</td>
-                                            <td class="score-post"><span>4-1</span></td>
-                                            <td class="score-side">Southampton</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">A Villa</td>
-                                            <td class="score-post"><span>1-2</span></td>
-                                            <td class="score-side">Fulham</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Cardiff</td>
-                                            <td class="score-post"><span>0-3</span></td>
-                                            <td class="score-side">C Palace</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Hull City</td>
-                                            <td class="score-post"><span>1-0</span></td>
-                                            <td class="score-side">Swansea </td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Man City</td>
-                                            <td class="score-post"><span>4-1</span></td>
-                                            <td class="score-side">Southampton</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">A Villa</td>
-                                            <td class="score-post"><span>1-2</span></td>
-                                            <td class="score-side">Fulham</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Cardiff</td>
-                                            <td class="score-post"><span>0-3</span></td>
-                                            <td class="score-side">C Palace</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Hull City</td>
-                                            <td class="score-post"><span>1-0</span></td>
-                                            <td class="score-side">Swansea </td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div>
-                                    <table class="table-scores">
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Man City</td>
-                                            <td class="score-post"><span>4-1</span></td>
-                                            <td class="score-side">Southampton</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">A Villa</td>
-                                            <td class="score-post"><span>1-2</span></td>
-                                            <td class="score-side">Fulham</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                                <div>
-                                    <table class="table-scores">
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Man City</td>
-                                            <td class="score-post"><span>4-1</span></td>
-                                            <td class="score-side">Southampton</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">A Villa</td>
-                                            <td class="score-post"><span>1-2</span></td>
-                                            <td class="score-side">Fulham</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="score-sub">12:45</td>
-                                            <td class="score-side">Hull City</td>
-                                            <td class="score-post"><span>1-0</span></td>
-                                            <td class="score-side">Swansea</td>
-                                            <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
-                                        </tr>
-                                    </table>
-                                </div>
+                        <div class="tab-content">
+                            <div>
+                                <table class="table-scores">
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Man City</td>
+                                        <td class="score-post"><span>4-1</span></td>
+                                        <td class="score-side">Southampton</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">A Villa</td>
+                                        <td class="score-post"><span>1-2</span></td>
+                                        <td class="score-side">Fulham</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Cardiff</td>
+                                        <td class="score-post"><span>0-3</span></td>
+                                        <td class="score-side">C Palace</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Hull City</td>
+                                        <td class="score-post"><span>1-0</span></td>
+                                        <td class="score-side">Swansea </td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Man City</td>
+                                        <td class="score-post"><span>4-1</span></td>
+                                        <td class="score-side">Southampton</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">A Villa</td>
+                                        <td class="score-post"><span>1-2</span></td>
+                                        <td class="score-side">Fulham</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Cardiff</td>
+                                        <td class="score-post"><span>0-3</span></td>
+                                        <td class="score-side">C Palace</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Hull City</td>
+                                        <td class="score-post"><span>1-0</span></td>
+                                        <td class="score-side">Swansea </td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                </table>
                             </div>
-
+                            <div>
+                                <table class="table-scores">
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Man City</td>
+                                        <td class="score-post"><span>4-1</span></td>
+                                        <td class="score-side">Southampton</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">A Villa</td>
+                                        <td class="score-post"><span>1-2</span></td>
+                                        <td class="score-side">Fulham</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <table class="table-scores">
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Man City</td>
+                                        <td class="score-post"><span>4-1</span></td>
+                                        <td class="score-side">Southampton</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">A Villa</td>
+                                        <td class="score-post"><span>1-2</span></td>
+                                        <td class="score-side">Fulham</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="score-sub">12:45</td>
+                                        <td class="score-side">Hull City</td>
+                                        <td class="score-post"><span>1-0</span></td>
+                                        <td class="score-side">Swansea</td>
+                                        <td class="score-tv"><a href="#"><i class="fa fa-file-text"></i></a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
-
-    </section>
-
-{{#if username}}
-
-    Welcome {{username}}
-    <nav>
-            <div class="logo">
-                <a href="index.html"><img src="http://vatevdesign.eu/demo/sportnews/img/logo.png" alt="Sport Template"></a>
-            </div>
-
+        </div>
+</section>
+{{#if username}} Welcome {{username}}
+<nav>
+    {{!-- <div class="logo">
+        <a href="index.html"><img src="http://vatevdesign.eu/demo/sportnews/img/logo.png" alt="Sport Template"></a>
+    </div> --}}
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Pages</a>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Pages</a>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="404.html">404</a></li>
-                        <li><a href="soon.html">Comming soon</a></li>
-                    </ul>
-                </li>
-                <li><a href="blog.html">Blog</a>
-                    <ul>
-                        <li><a href="blog-post.html">Blog Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Shortcodes</a>
-                    <ul>
-                        <li class="active"><a href="modules.html">Modules</a></li>
-                        <li><a href="accordion.html">Accordion</a></li>
-                        <li><a href="blockquote.html">Blockquote</a></li>
-                        <li><a href="buttons.html">Buttons</a></li>
-                        <li><a href="sliders.html">Sliders</a></li>
-                        <li><a href="icon-box.html">Icon Box</a></li>
-                        <li><a href="feature-icons.html">Feature Icons</a></li>
-                        <li><a href="alerts.html">Alerts</a></li>
-                        <li><a href="price-table.html">Pricing Tables</a></li>
-                        <li><a href="tabs.html">Tabs</a></li>
-                        <li><a href="tagline-boxes.html">Tagline Boxes</a></li>
-                        <li><a href="full-width.html">Typography</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="404.html">404</a></li>
+                <li><a href="soon.html">Comming soon</a></li>
             </ul>
-        </nav>
-{{/if}}
+        </li>
+        <li><a href="blog.html">Blog</a>
+            <ul>
+                <li><a href="blog-post.html">Blog Post</a></li>
+            </ul>
+        </li>
+        <li><a href="#">Shortcodes</a>
+            <ul>
+                <li class="active"><a href="modules.html">Modules</a></li>
+                <li><a href="accordion.html">Accordion</a></li>
+                <li><a href="blockquote.html">Blockquote</a></li>
+                <li><a href="buttons.html">Buttons</a></li>
+                <li><a href="sliders.html">Sliders</a></li>
+                <li><a href="icon-box.html">Icon Box</a></li>
+                <li><a href="feature-icons.html">Feature Icons</a></li>
+                <li><a href="alerts.html">Alerts</a></li>
+                <li><a href="price-table.html">Pricing Tables</a></li>
+                <li><a href="tabs.html">Tabs</a></li>
+                <li><a href="tagline-boxes.html">Tagline Boxes</a></li>
+                <li><a href="full-width.html">Typography</a></li>
+            </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+{{/if}} {{/if}}

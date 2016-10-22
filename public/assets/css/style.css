@@ -45,7 +45,7 @@ a h1:hover, a h2:hover {
 /************** Master ***************/
 /* ----------------------------------------- */
 /************** General Sections **************/
-body { 
+body {
 	font-family: 'Roboto Condensed', Open Sans, Arial, sans-serif;
 	font-size: 13px;
 }
@@ -218,7 +218,7 @@ header h1 {
 	font-size: 40px!important;
 	color: #fff;
 	display: inline-block;
-	background-color: rgba(0,0,0,0.4); 
+	background-color: rgba(0,0,0,0.4);
 }
 header h2 {
 	margin: 30px 0 10px!important;
@@ -275,7 +275,7 @@ footer .module-content {
 .countdown-big div{
 	font-size: 40px!important;
 	line-height: 30px!important;
-	margin-left: 15px!important;	
+	margin-left: 15px!important;
 }
 
 }
@@ -313,62 +313,62 @@ nav ul {
 }
 
 nav ul li {
-	display: inline;    
-	padding: 25px 0; 
+	display: inline;
+	padding: 25px 0;
 	margin-left: 40px;
 	line-height: 30px;
 }
 
-nav ul>li { 
-	position: relative; 
+nav ul>li {
+	position: relative;
 }
 
-nav ul>li>ul { 
-	width: 180px; 
-	position: absolute; 
+nav ul>li>ul {
+	width: 180px;
+	position: absolute;
 	left: -9999px;
-	z-index: 9999; 
-	top: 45px; 
+	z-index: 9999;
+	top: 45px;
 }
 
-nav ul>li:hover>ul { 
-	left: -10px; 
+nav ul>li:hover>ul {
+	left: -10px;
 }
 
 nav ul li:hover ul {
 	border-bottom: none!important;
 }
 
-nav ul li ul li { 
-	padding: 5px 20px; 
+nav ul li ul li {
+	padding: 5px 20px;
 	margin-left: 0px;
-	display: block; 
-	background-color: rgba(0,0,0,0.8); 
-	text-align: left;  
+	display: block;
+	background-color: rgba(0,0,0,0.8);
+	text-align: left;
 	border-bottom: 2px solid rgba(0,0,0,0.1);
 }
 
-nav ul li ul li:hover { 
+nav ul li ul li:hover {
 	border-bottom: 2px solid #E7BF3A;
 }
 
-nav ul li ul li:hover>a { 
+nav ul li ul li:hover>a {
 	color: #E7BF3A;
 	padding-left: 6px;
 	margin: 5px 0;
 	font-size: 16px;
 }
 
-nav ul>li>ul { 
-	display: block; 
-	position: absolute; 
-	left: -9999px; 
+nav ul>li>ul {
+	display: block;
+	position: absolute;
+	left: -9999px;
 }
 
-nav ul>li>ul>li:hover>ul { 
-	width: 210px; 
-	left: 165px; 
-	margin-top: -35px; 
+nav ul>li>ul>li:hover>ul {
+	width: 210px;
+	left: 165px;
+	margin-top: -35px;
 }
 
 nav ul li a {
@@ -377,12 +377,12 @@ nav ul li a {
 	color: #fff;
 }
 
-nav ul li ul li a { 
-	display: block; 
-	line-height: 30px; 
+nav ul li ul li a {
+	display: block;
+	line-height: 30px;
 	font-size: 15px;
-	margin: 0; 
-	text-transform: capitalize; 
+	margin: 0;
+	text-transform: capitalize;
 }
 
 header h1 {
@@ -391,7 +391,7 @@ header h1 {
 	font-size: 80px;
 	color: #fff;
 	display: inline-block;
-	background-color: rgba(0,0,0,0.4); 
+	background-color: rgba(0,0,0,0.4);
 }
 header h2 {
 	margin: 50px 0 20px;
@@ -550,16 +550,16 @@ body:not(.mobile) #stickynav{
 
 .sport-news {
 	background: #2c2f36;
-	border-bottom: 5px solid rgba(0,0,0,0.3);	
+	border-bottom: 5px solid rgba(0,0,0,0.3);
 }
 
 .sport-news .sport {
 	background: #2c2f36;
-	border-top: 5px solid #E7BF3A; 
+	border-top: 5px solid #E7BF3A;
 }
 .sport-news .sport-title {
 	background: #2c2f36;
-	border-top: 5px solid #E7BF3A; 
+	border-top: 5px solid #E7BF3A;
 }
 .sport-news .sport-title:hover {
 	background: #3f444a;
@@ -569,7 +569,7 @@ body:not(.mobile) #stickynav{
 }
 
 .sport-news .sport:hover p {
-	color: #fff; 
+	color: #fff;
 }
 
 .sport-content {
@@ -699,7 +699,7 @@ body:not(.mobile) #stickynav{
 	z-index: 999;
 	background: #2c2f36;
 	border-bottom: 5px solid rgba(0,0,0,0.3);
-	border-top: 5px solid #E7BF3A;	
+	border-top: 5px solid #E7BF3A;
 }
 .radio-title:hover {
 	background: #3f444a;
@@ -714,7 +714,7 @@ body:not(.mobile) #stickynav{
 }
 
 .radio-news .radio:hover p {
-	color: #fff; 
+	color: #fff;
 }
 
 .radio-content {
@@ -820,12 +820,12 @@ body:not(.mobile) #stickynav{
 
 .content {
 	background-color: rgba(0,0,0,0.3);
-	padding: 60px 45px; 
+	padding: 60px 45px;
 }
 
 .content:hover {
 	background-color: rgba(0,0,0,0.7);
-	padding: 60px 45px; 
+	padding: 60px 45px;
 }
 
 .content h1 {
@@ -896,7 +896,7 @@ body:not(.mobile) #stickynav{
 .blog-post:hover .post-img img {
 	transform:scale(1.2,1.2) rotate(1deg);
 	-ms-transform:scale(1.2,1.2) rotate(1deg); /* IE 9 */
-	-webkit-transform:scale(1.2,1.2) rotate(1deg); /* Opera, Chrome, and Safari */	
+	-webkit-transform:scale(1.2,1.2) rotate(1deg); /* Opera, Chrome, and Safari */
 }
 .post-img {
 	width: 100%;
@@ -988,7 +988,7 @@ body:not(.mobile) #stickynav{
 	color: #E7BF3A;
 	transform:scale(1.4,1.4) rotate(30deg);
 	-ms-transform:scale(1.4,1.4) rotate(30deg); /* IE 9 */
-	-webkit-transform:scale(1.4,1.4) rotate(30deg); /* Opera, Chrome, and Safari */		
+	-webkit-transform:scale(1.4,1.4) rotate(30deg); /* Opera, Chrome, and Safari */
 }
 /*  TABLE SCORES-FOOTBALL  ==================================================================== */
 .table-scores {
@@ -1020,10 +1020,10 @@ body:not(.mobile) #stickynav{
 
 .table-scores tr.t-header td {
 	background: #14161b;
-	border-bottom: none;	
+	border-bottom: none;
 }
 .table-scores tr.t-header:hover td {
-	background: #14161b;	
+	background: #14161b;
 }
 
 .table-scores tr td i {
@@ -1053,7 +1053,7 @@ body:not(.mobile) #stickynav{
 .icon-box:hover i {
 	transform:scale(1.2,1.2) rotate(30deg);
 	-ms-transform:scale(1.2,1.2) rotate(30deg); /* IE 9 */
-	-webkit-transform:scale(1.2,1.2) rotate(30deg); /* Opera, Chrome, and Safari */		
+	-webkit-transform:scale(1.2,1.2) rotate(30deg); /* Opera, Chrome, and Safari */
 }
 
 .dark-i-box {
@@ -1111,10 +1111,10 @@ body:not(.mobile) #stickynav{
 	border-top: 5px solid #E7BF3A;
 }
 
-.accordion-title { 
+.accordion-title {
 	display: block;
 	cursor: pointer;
-	padding: 15px 30px;	
+	padding: 15px 30px;
 	background: #2C2F36;
 }
 
@@ -1127,13 +1127,13 @@ body:not(.mobile) #stickynav{
 	display: inline-block;
 }
 
-.accordion-content { 
+.accordion-content {
 	display: none;
 	padding: 30px;
 	background-color: rgba(0,0,0,0.4);
 }
 
-.accordion-content p{ 
+.accordion-content p{
 	margin: 0;
 	padding: 0;
 	color: #fff;
@@ -1319,7 +1319,7 @@ body:not(.mobile) #stickynav{
 	position: relative;
 }
 .alert ul{
-	padding-right: 20px; 
+	padding-right: 20px;
 	display: inline-block;
 }
 .alert ul ul{
@@ -1328,7 +1328,7 @@ body:not(.mobile) #stickynav{
 .alert-success {
 	background: #2ecc71;
 	border-bottom: 5px solid #27ae60;
-	color: #fff;	
+	color: #fff;
 }
 .alert-success i {
 	color: #27ae60;
@@ -1346,7 +1346,7 @@ body:not(.mobile) #stickynav{
 .alert-notice {
 	color: #333;
 	background: #ecf0f1;
-	border-bottom: 5px solid #bdc3c7;	
+	border-bottom: 5px solid #bdc3c7;
 }
 .alert-notice i {
 	color: #bdc3c7;
@@ -1355,7 +1355,7 @@ body:not(.mobile) #stickynav{
 .alert-error {
 	background: #e74c3c;
 	border-bottom: 5px solid #c0392b;
-	color: #fff;	
+	color: #fff;
 }
 .alert-error i {
 	color: #c0392b;
@@ -1452,14 +1452,14 @@ blockquote:hover i {
 	color: #E7BF3A;
 	transform:scale(1.2,1.2) rotate(30deg);
 	-ms-transform:scale(1.2,1.2) rotate(30deg); /* IE 9 */
-	-webkit-transform:scale(1.2,1.2) rotate(30deg); /* Opera, Chrome, and Safari */	
+	-webkit-transform:scale(1.2,1.2) rotate(30deg); /* Opera, Chrome, and Safari */
 }
 
 blockquote .author {
 	padding: 10px 30px;
 	display: inline-block;
 	color: #2c2f36;
-	background: #E7BF3A; 
+	background: #E7BF3A;
 }
 /*  VERTICAL TABS   ============================================================================= */
 
@@ -1467,7 +1467,7 @@ blockquote .author {
 	cursor: pointer;
 }
 .tab-nav li h4 {
-	padding: 15px 0;	
+	padding: 15px 0;
 	margin: 0;
 	font-size: 14px;
 	text-align: center;
@@ -1584,7 +1584,7 @@ border: 0px!important;
 	float: left;
 	display: inline-block;
 	font-size: 14px;
-	font-weight: 300!important;	
+	font-weight: 300!important;
 	color: #3f444a;
 }
 
@@ -1599,7 +1599,7 @@ border: 0px!important;
 	color: #2c2f36;
 	transform:scale(1.2,1.2) rotate(30deg);
 	-ms-transform:scale(1.2,1.2) rotate(30deg); /* IE 9 */
-	-webkit-transform:scale(1.2,1.2) rotate(30deg); /* Opera, Chrome, and Safari */	
+	-webkit-transform:scale(1.2,1.2) rotate(30deg); /* Opera, Chrome, and Safari */
 }
 
 /*  SUBSCRIBE   ==================================================================== */
@@ -1636,9 +1636,9 @@ input.email {
 	color: #fff;
 	text-transform: uppercase;
 	font-size: 15px;
-	border: none;	
+	border: none;
 	cursor: pointer;
-	border-bottom: 3px solid #2c2f36;	
+	border-bottom: 3px solid #2c2f36;
 }
 
 #send:hover{
@@ -1742,7 +1742,7 @@ button:active {
 
 /*  COUNTDOWN  ============================================================================= */
 .countdown {
-	padding: 20px; 
+	padding: 20px;
 }
 .countdown div{
 	float: left;
@@ -1783,7 +1783,7 @@ button:active {
 
 .countdown-big {
 	margin: 50px 0 50px;
-	display: inline-block;  
+	display: inline-block;
 }
 .countdown-big div{
 	float: left;
@@ -1848,7 +1848,7 @@ button:active {
 /*  FOOTER   ==================================================================== */
 footer {
 	width: 100%;
-	border-bottom: 5px solid #E7BF3A; 
+	border-bottom: 5px solid #E7BF3A;
 }
 footer h4 {
 	margin-bottom: 20px;
@@ -1877,4 +1877,20 @@ footer ul.social li a:hover i {
 	transform:scale(1.4,1.4) rotate(30deg);
 	-ms-transform:scale(1.4,1.4) rotate(30deg); /* IE 9 */
 	-webkit-transform:scale(1.4,1.4) rotate(30deg); /* Opera, Chrome, and Safari */
+}
+
+#h3{
+	color: white;
+}
+
+#user{
+	color: white;
+}
+
+#signin, #signup{
+	padding: 10px;
+}
+
+#signin1, #signup1{
+	margin-bottom: 15px;
 }

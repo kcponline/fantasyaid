@@ -1,0 +1,234 @@
+ {{>nav}}
+<div class="m-12 bg-orange">
+    <div class="m-06 bg-orange">
+        <div class="m-06 bg-orange">
+            <form id="teSearchLeft" action="tightend/search">
+                <label for="teInputLeft">
+                    <h3>Search tightend</h3></label>
+                <input type="text" id="teInputLeft">
+                <br>
+                <!-- This button will trigger our AJAX call -->
+                <input id="findTeLeft" type="submit" value="Find Tightend" method="GET">
+            </form>
+        </div>
+    </div>
+    <div class="m-06 bg-orange">
+        <div class="m-06 bg-orange">
+            <form id="teSearchRight" action="tightend/search">
+                <label for="teInputRight">
+                    <h3>Search tightend</h3></label>
+                <input type="text" id="teInputRight">
+                <br>
+                <!-- This button will trigger our AJAX call -->
+                <input id="findTeRight" type="submit" value="Find Tightend" method="GET">
+            </form>
+        </div>
+    </div>
+</div>
+<div class="m-06">
+    <div class="module-content">
+        <div class="title-default">
+            <h2 id="teLeftName"></h2>
+        </div>
+        <!-- Module Title -->
+        <table class="table-scores">
+            <tr class="t-header">
+                <td>Receptions</td>
+                <td>Pass Yards</td>
+                <td>Touchdowns</td>
+                <td>Fantasy Points</td>
+            </tr>
+            <tr>
+                <td id="teLeftReceptions"></td>
+                <td id="teLeftPassYards"></td>
+                <td id="teLeftTds"></td>
+                <td id="teLeftPoints"></td>
+            </tr>
+        </table>
+        <!-- Table Scores -->
+
+        <table class="table-scores">
+            <tr class="t-header">
+                <td>Our Prediction</td>
+            </tr>
+            <tr>
+                <td id="leftanalysis"></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Module Content -->
+</div>
+<div class="m-06">
+    <div class="module-content">
+        <div class="title-default">
+            <h2 id="teRightName"></h2>
+        </div>
+        <!-- Module Title -->
+        <table class="table-scores">
+            <tr class="t-header">
+                <td>Receptions</td>
+                <td>Pass Yards</td>
+                <td>Total TD's</td>
+                <td>Fantasy Points</td>
+            </tr>
+            <tr>
+                <td id="teRightReceptions"></td>
+                <td id="teRightPassYards"></td>
+                <td id="teRightTds"></td>
+                <td id="teRightPoints"></td>
+            </tr>
+        </table>
+        <!-- Table Scores -->
+        <table class="table-scores">
+            <tr class="t-header">
+                <td>Our Prediction</td>
+            </tr>
+            <tr>
+                <td id="rightanalysis"></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Module Content -->
+</div>
+<script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+// This .on("click") function will trigger the AJAX Call
+var queryURL = "http://api.fantasy.nfl.com/v1/players/stats?statType=weekStats&season=2016&week=6&position=TE&format=json";
+
+
+$('#findTeLeft').on('click', function() {
+
+    var teLeft = $('#teInputLeft').val();
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function(response) {
+        for (var i = 0; i < response.players.length; i++)
+            if (teLeft == response.players[i].name) {
+
+                $("#teLeftName").text(JSON.stringify(response.players[i].name));
+
+                if (response.players[i].stats[21] === undefined) {
+                    $("#teLeftPassYards").html("0");
+
+                    var leftTePassYards = 0;
+
+                } else {
+                    $("#teLeftPassYards").html(JSON.parse(response.players[i].stats[21]));
+
+                    var passYardsLeft = JSON.parse(response.players[i].stats[21] / 25);
+                };
+
+
+                if (response.players[i].stats[20] === undefined) {
+                    $("#teLeftReceptions").html("0");
+
+
+
+                } else {
+                    $("#teLeftReceptions").html(JSON.parse(response.players[i].stats[20]));
+
+                    receptionPoints = JSON.parse(response.players[i].stats[20] * 0.25);
+
+
+                };
+
+                if (response.players[i].stats[22] === undefined) {
+                    $("#teLeftTds").html("0");
+                    lefttdPoints = 0;
+                } else {
+                    $("#teLeftTds").html(JSON.parse(response.players[i].stats[22]));
+                    lefttdPoints = JSON.parse(response.players[i].stats[22] * 6);
+
+
+                };
+
+                var teLeftPoints = lefttdPoints + receptionPoints + passYardsLeft;
+                
+
+
+                $("#teLeftPoints").html(teLeftPoints.toFixed(2));
+
+                var projectedleft = JSON.parse(response.players[i].weekProjectedPts);
+
+                $("#leftanalysis").html("Our Analysis Projects " + projectedleft + " Points This Week");
+
+            };
+    });
+
+
+
+
+
+    return false;
+});
+
+$('#findTeRight').on('click', function() {
+
+    var teRight = $('#teInputRight').val();
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function(response) {
+        for (var i = 0; i < response.players.length; i++)
+            if (teRight == response.players[i].name) {
+
+                $("#teRightName").text(JSON.stringify(response.players[i].name));
+
+                if (response.players[i].stats[21] === undefined) {
+                    $("#teRightPassYards").html("0");
+
+                    var rightTePassYards = 0;
+
+                } else {
+                    $("#teRightPassYards").html(JSON.parse(response.players[i].stats[21]));
+
+                    var passYardsRight = JSON.parse(response.players[i].stats[21] / 25);
+                };
+
+
+                if (response.players[i].stats[20] === undefined) {
+                    $("#teRightReceptions").html("0");
+
+
+
+                } else {
+                    $("#teRightReceptions").html(JSON.parse(response.players[i].stats[20]));
+
+                    receptionPoints = JSON.parse(response.players[i].stats[20] * 0.25);
+
+
+                };
+
+                if (response.players[i].stats[22] === undefined) {
+                    $("#teRightTds").html("0");
+                    righttdPoints = 0;
+                } else {
+                    $("#teRightTds").html(JSON.parse(response.players[i].stats[22]));
+                    righttdPoints = JSON.parse(response.players[i].stats[22] * 6);
+
+
+                };
+
+                var teRightPoints = righttdPoints + receptionPoints + passYardsRight;
+                console.log(teRightPoints);
+
+                $("#teRightPoints").html(teRightPoints.toFixed(2));
+
+                var projectedright = JSON.parse(response.players[i].weekProjectedPts);
+
+                $("#rightanalysis").html("Our Analysis Projects " + projectedright + " Points This Week");
+
+
+            };
+    });
+
+    
+
+
+
+    return false;
+});
+</script>

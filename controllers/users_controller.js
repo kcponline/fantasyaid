@@ -4,12 +4,8 @@ var express = require('express');
 var router  = express.Router();
 
 //this is the users_controller.js file
-router.get('/new', function(req,res) {
-	res.render('users/new');
-});
-
-router.get('/sign-in', function(req,res) {
-	res.render('users/sign_in');
+router.get('/signin-signup', function(req,res) {
+	res.render('/users/signin-signup');
 });
 
 router.get('/sign-out', function(req,res) {
@@ -26,7 +22,7 @@ router.post('/login', function(req, res) {
   }).then(function(user) {
 
 		if (user === null){
-			res.redirect('/users/sign-in');
+			res.redirect('/');
 		}
 
 		// Use bcrypt to compare the user's password input
@@ -51,12 +47,12 @@ router.post('/login', function(req, res) {
           // and the user's email.
           req.session.user_email = user.email;
 
-          res.redirect('/');
-        }
+		res.redirect('/fantasy');
+   }
         // if the result is anything but true (password invalid)
         else{
         	// redirect user to sign in
-					res.redirect('/users/sign-in');
+					res.redirect('/');
 				}
     });
 });
@@ -82,7 +78,8 @@ router.post('/create', function(req,res) {
 						// storing the email they sent and the hash you just made
 						models.User.create({
 							email: req.body.email,
-							password_hash: hash
+							password_hash: hash,
+							username: req.body.username
 						})
 						// In a .then promise connected to that create method,
 						// save the user's information to req.session
@@ -103,13 +100,12 @@ router.post('/create', function(req,res) {
 		          req.session.user_email = user.email;
 
 		          // redirect to home on login
-							res.redirect('/');
-						});
-					});
-			});
-
-		}
-	});
+				  res.redirect('/fantasy');
+			  });
+		  });
+	  });
+	  }
+  });
 });
 
 module.exports = router;

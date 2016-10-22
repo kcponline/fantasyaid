@@ -1,0 +1,247 @@
+ {{>nav}}
+<div class="m-12 bg-orange">
+    <div class="m-06 bg-orange">
+        <div class="m-06 bg-orange">
+            <form id="rbSearchLeft" action="rb/search">
+                <label for="rbInputLeft">
+                    <h3>Search Running Back</h3></label>
+                <input type="text" id="rbInputLeft">
+                <br>
+                <!-- This button will trigger our AJAX call -->
+                <input id="findRBLeft" type="submit" value="Find Running Back" method="GET">
+            </form>
+        </div>
+    </div>
+    <div class="m-06 bg-orange">
+        <div class="m-06 bg-orange">
+            <form id="rbSearchRight" action="rb/search">
+                <label for="rbInputRight">
+                    <h3>Search Running Back</h3></label>
+                <input type="text" id="rbInputRight">
+                <br>
+                <!-- This button will trigger our AJAX call -->
+                <input id="findRBRight" type="submit" value="Find Running Back">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="m-06">
+    <div class="module-content">
+        <div class="title-default">
+            <h2 id="rbLeftName"></h2>
+        </div>
+        <!-- Module Title -->
+        <table class="table-scores">
+            <tr class="t-header">
+							<td>Rushes</td>
+							<td>Rush Yards</td>
+							<td>Receptions</td>
+							<td>Pass Yards</td>
+							<td>Total TDs</td>
+							<td>Fantasy Points</td>
+            </tr>
+            <tr>
+							<td id="rbLeftRushes"></td>
+							<td id="rbLeftRushYards"></td>
+							<td id="rbLeftReceptions"></td>
+							<td id="rbLeftPassYards"></td>
+							<td id="rbLeftTotalTD"></td>
+							<td id="rbLeftPoints"></td>
+            </tr>
+        </table>
+        <!-- Table Scores -->
+        <table class="table-scores">
+            <tr class="t-header">
+                <td>Our Prediction</td>
+            </tr>
+            <tr>
+                <td id="leftanalysis"></td>
+            </tr>
+        </table>
+
+    </div>
+    <!-- Module Content -->
+</div>
+<!-- Module -->
+<div class="m-06">
+    <div class="module-content">
+        <div class="title-default">
+            <h2 id="rbRightName"></h2>
+        </div>
+        <!-- Module Title -->
+        <table class="table-scores">
+          <tr class="t-header">
+            <td>Rushes</td>
+            <td>Rush Yards</td>
+            <td>Receptions</td>
+            <td>Pass Yards</td>
+            <td>Total TDs</td>
+            <td>Fantasy Points</td>
+          </tr>
+          <tr>
+            <td id="rbRightRushes"></td>
+            <td id="rbRightRushYards"></td>
+            <td id="rbRightReceptions"></td>
+            <td id="rbRightPassYards"></td>
+            <td id="rbRightTotalTD"></td>
+            <td id="rbRightPoints"></td>
+          </tr>
+        </table>
+        <!-- Table Scores -->
+        <table class="table-scores">
+            <tr class="t-header">
+                <td>Our Prediction</td>
+            </tr>
+            <tr>
+                <td id="rightanalysis"></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Module Content -->
+</div>
+<!-- Module -->
+<script src='https://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+// This .on("click") function will trigger the AJAX Call
+var queryURL = "http://api.fantasy.nfl.com/v1/players/stats?statType=weekStats&season=2016&week=6&position=RB&format=json";
+
+$('#findRBLeft').on('click', function() {
+
+    var rbLeft = $('#rbInputLeft').val();
+
+    // Here we assemble our URL
+    $.ajax({url: queryURL, method: "GET"}).done(function(response) {
+			for (var i = 0; i < response.players.length; i++)
+      if (rbLeft == response.players[i].name) {
+
+          $("#rbLeftName").text(JSON.stringify(response.players[i].name));
+
+					if (response.players[i].stats[13] === undefined) {
+            $("#rbLeftRushes").html("0");
+          } else {
+            $("#rbLeftRushes").html(JSON.parse(response.players[i].stats[13]));
+          };
+
+          if (response.players[i].stats[14] === undefined) {
+            $("#rbLeftRushYards").html("0");
+            var RushYards = 0;
+          } else {
+            $("#rbLeftRushYards").html(JSON.parse(response.players[i].stats[14]));
+            var rushYardsLeft = JSON.parse(response.players[i].stats[14] / 10);
+          };
+
+          if (response.players[i].stats[20] === undefined) {
+            $("#rbLeftReceptions").html("0");
+
+            var rbLeftRec = 0;
+          
+          } else {
+            $("#rbLeftReceptions").html(JSON.parse(response.players[i].stats[20]));
+          };
+
+          if (response.players[i].stats[21] === undefined) {
+            $("#rbLeftPassYards").html("0");
+            var passYardsLeft = 0;
+          } else {
+            $("#rbLeftPassYards").html(JSON.parse(response.players[i].stats[21]));
+            
+            var passYardsLeft = JSON.parse(response.players[i].stats[21] / 10);
+          };
+
+          if (response.players[i].stats[22] === undefined) {
+            var catchTd = 0;
+          } else {
+            var catchTd = JSON.parse(response.players[i].stats[22]);
+          };
+
+					if (response.players[i].stats[15] === undefined) {
+            var rushTD = 0;
+          } else {
+            var rushTD = JSON.parse(response.players[i].stats[15]);
+          };
+					var totalTD = parseInt(catchTd) + parseInt(rushTD);
+          $("#rbLeftTotalTD").html(totalTD);
+
+          var totalTDLeft = totalTD * 6;
+
+          var total = totalTDLeft + passYardsLeft + rushYardsLeft;
+          $("#rbLeftPoints").html(total.toFixed(2));
+
+          var projectedleft = JSON.parse(response.players[i].weekProjectedPts);
+
+                $("#leftanalysis").html("Our Analysis Projects " + projectedleft + " Points This Week");
+        }
+      });
+
+        return false;
+});
+
+$('#findRBRight').on('click', function() {
+
+    var rbRight = $('#rbInputRight').val();
+
+    // Here we assemble our URL
+    $.ajax({url: queryURL, method: "GET"}).done(function(response) {
+			for (var i = 0; i < response.players.length; i++)
+      if (rbRight == response.players[i].name) {
+
+          $("#rbRightName").text(JSON.stringify(response.players[i].name));
+
+					if (response.players[i].stats[13] === undefined) {
+            $("#rbRightRushes").html("0");
+          } else {
+            $("#rbRightRushes").html(JSON.parse(response.players[i].stats[13]));
+          };
+
+          if (response.players[i].stats[14] === undefined) {
+            $("#rbRightRushYards").html("0");
+            var RushYards = 0;
+          } else {
+            $("#rbRightRushYards").html(JSON.parse(response.players[i].stats[14]));
+            var rushYardsRight = JSON.parse(response.players[i].stats[14] / 10);
+          };
+
+          if (response.players[i].stats[20] === undefined) {
+            $("#rbRightReceptions").html("0");
+          } else {
+            $("#rbRightReceptions").html(JSON.parse(response.players[i].stats[20]));
+          };
+
+          if (response.players[i].stats[21] === undefined) {
+            $("#rbRightPassYards").html("0");
+            var passYardsRight = 0;
+          } else {
+            $("#rbRightPassYards").html(JSON.parse(response.players[i].stats[21]));
+            var passYardsRight = JSON.parse(response.players[i].stats[21] / 10);
+          };
+
+          if (response.players[i].stats[22] === undefined) {
+            var catchTd = 0;
+          } else {
+            var catchTd = JSON.parse(response.players[i].stats[22]);
+          };
+
+					if (response.players[i].stats[15] === undefined) {
+            var rushTD = 0;
+          } else {
+            var rushTD = JSON.parse(response.players[i].stats[15]);
+          };
+					var totalTD = parseInt(catchTd) + parseInt(rushTD);
+          $("#rbRightTotalTD").html(totalTD);
+          console.log(totalTD);
+
+          var totalTDRight = totalTD * 6;
+
+          var total = totalTDRight + passYardsRight + rushYardsRight;
+          $("#rbRightPoints").html(total.toFixed(2));
+          
+          var projectedright = JSON.parse(response.players[i].weekProjectedPts);
+
+                $("#rightanalysis").html("Our Analysis Projects " + projectedright + " Points This Week");
+        }
+      });
+
+        return false;
+});
+</script>
